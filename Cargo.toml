@@ -5,5 +5,5 @@ edition = "2024"
 
 [dependencies]
 reqwest = { version = "0.12.19", features = ["blocking"] }
-rrmounter = "0.2.3"
+rrmounter = "0.2.5"
 scraper = "0.23.1"

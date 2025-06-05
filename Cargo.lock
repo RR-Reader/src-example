@@ -1109,13 +1109,14 @@ dependencies = [
 
 [[package]]
 name = "rrmounter"
-version = "0.2.3"
+version = "0.2.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c2defa6475a0c18acbea5d02ed5a863eb8fe7917d20a27dd8ead76894b5530ee"
+checksum = "ac1fd55608877cae41653f0949e42cbf24a050f1c7be50425a2b5d086aebc9c1"
 dependencies = [
  "bitflags",
  "chrono",
  "reqwest",
+ "scraper",
  "serde",
  "serde_json",
  "thiserror",

@@ -1,15 +1,34 @@
 use rrmounter::{
     AsyncSourceResult,
     base::{
-        ContentRating, HomeSection, Language, LanguageKey, PaginatedResponse, SearchRequest,
-        SourceInfo, SourceInstance,
+        ContentRating, HomeSection, HomeSectionType, Language, LanguageKey, PaginatedResponse,
+        SearchRequest, SourceInfo, SourceInstance,
     },
-    generate::{Series, SeriesEntry, Status},
+    generate::{Chapter, Series, SeriesEntry, Status},
 };
 
 pub fn get_home() -> AsyncSourceResult<Vec<HomeSection>> {
     Box::pin(async {
-        let sections: Vec<HomeSection> = vec![];
+        let mut sections: Vec<HomeSection> = vec![];
+
+        let popular_section: HomeSection = HomeSection {
+            id: "popular_manga".to_string(),
+            title: "Popular Manga".to_string(),
+            entries: vec![],
+            section_type: HomeSectionType::SingleRowLarge,
+            contain_more_items: false,
+        };
+
+        let latest_section: HomeSection = HomeSection {
+            id: "latest_manga".to_string(),
+            title: "Latest Manga".to_string(),
+            entries: vec![],
+            section_type: HomeSectionType::SingleRowLarge,
+            contain_more_items: false,
+        };
+
+        sections.push(popular_section);
+        sections.push(latest_section);
 
         Ok(sections)
     })
@@ -48,6 +67,7 @@ pub fn get_manga_details(series_id: String) -> AsyncSourceResult<Series> {
         let description: String = String::new();
         let status: Status = Status::Ongoing;
         let cover_url: String = String::new();
+        let chapters: Vec<Chapter> = vec![];
         let author: Vec<String> = vec![];
         let artist: Vec<String> = vec![];
         let tags: Vec<String> = vec![];
@@ -63,6 +83,7 @@ pub fn get_manga_details(series_id: String) -> AsyncSourceResult<Series> {
             status,
             cover_url,
             author,
+            chapters,
             artist,
             tags,
             hentai,
