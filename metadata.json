@@ -1,0 +1,46 @@
+{
+  "name": "Example",
+  "version": "0.1.0",
+  "description": "An example manga source metadata file.",
+  "author": "notreallyuri",
+  "homepage_url": "https://mangadex.org",
+  "icon_url": "https://mangadex.org/favicon.ico",
+  "language": {
+    "key": "Multi",
+    "name": "Multiple Languages",
+    "flag_code": "",
+    "iso639_1": ""
+  },
+  "intents": ["MANGA_CHAPTERS", "MANGA_TRACKING", "HOMEPAGE_SECTIONS"],
+  "content_rating": "Multi",
+  "capabilities": {
+    "search": true,
+    "home_sections": true,
+    "manga_details": true,
+    "chapter_reading": true,
+    "manga_tracking": false
+  },
+  "settings": [
+    {
+      "key": "allowed_content_rating",
+      "name": "Allowed Content Rating",
+      "description": "Select the content ratings you want to allow.",
+      "type": "string-array",
+      "default": ["Everyone", "Mature"]
+    },
+    {
+      "key": "allowed_languages",
+      "name": "Allowed Languages",
+      "description": "Select the languages you want to allow.",
+      "type": "string-array",
+      "default": ["English", "Portuguese"]
+    },
+    {
+      "key": "blocked_tags",
+      "name": "Blocked Tags",
+      "description": "Select the tags you want to allow.",
+      "type": "string-array",
+      "default": []
+    }
+  ]
+}

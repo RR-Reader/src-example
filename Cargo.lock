@@ -70,9 +70,6 @@ name = "bitflags"
 version = "2.9.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1b8e56985ec62d17e9c1001dc89c88ecd7dc08e47eba5ec7c29c7b5eeecde967"
-dependencies = [
- "serde",
-]
 
 [[package]]
 name = "bumpalo"
@@ -1109,11 +1106,10 @@ dependencies = [
 
 [[package]]
 name = "rrmounter"
-version = "0.2.5"
+version = "0.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ac1fd55608877cae41653f0949e42cbf24a050f1c7be50425a2b5d086aebc9c1"
+checksum = "dadec363bb1c05edf1dbe19be7513b9b500ac0482fbeaaeff4d9dc9fa73065b6"
 dependencies = [
- "bitflags",
  "chrono",
  "reqwest",
  "scraper",

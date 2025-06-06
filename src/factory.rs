@@ -1,8 +1,7 @@
 use rrmounter::{
     AsyncSourceResult,
     base::{
-        ContentRating, HomeSection, HomeSectionType, Language, LanguageKey, PaginatedResponse,
-        SearchRequest, SourceInfo, SourceInstance,
+        HomeSection, HomeSectionType, LanguageKey, PaginatedResponse, SearchRequest, SourceInstance,
     },
     generate::{Chapter, Series, SeriesEntry, Status},
 };
@@ -108,29 +107,9 @@ pub fn get_chapter(
 
 pub fn example_source() -> SourceInstance {
     SourceInstance {
-        active: false,
         home_page: get_home,
-        settings: vec![],
         search: get_search_results,
         series: get_manga_details,
         chapter: get_chapter,
-        metadata: SourceInfo {
-            version: "0.0.1".to_string(),
-            name: "Example".to_string(),
-            description: "A source for manga content".to_string(),
-            content_rating: ContentRating::Mature,
-            icon_url: "https://example.com/favicon.ico".to_string(),
-            publisher: "Notreallyuri".to_string(),
-            publisher_url: None,
-            homepage_url: "https://example.com".to_string(),
-            intents: None,
-            language: Language {
-                key: LanguageKey::English,
-                name: LanguageKey::English.name().to_string(),
-                flag_code: LanguageKey::English.flag_code().to_string(),
-                iso639_1: LanguageKey::English.iso639_1().to_string(),
-            },
-            badges: None,
-        },
     }
 }
